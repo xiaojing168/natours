@@ -1,0 +1,13 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  // 这是定义1rem的大小，电脑默认字体是1rem =16px,但这里我默认是10px,那么1rem就是默认的62.5%是10px
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
