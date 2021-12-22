@@ -7,7 +7,37 @@
 
 html {
   // 这是定义1rem的大小，电脑默认字体是1rem =16px,但这里我默认是10px,那么1rem就是默认的62.5%是10px
-  font-size: 62.5%; }
+  font-size: 62.5%; 
+
+
+
+@include respond(tab-land){ // >1200px
+  font-size: 56.25%;//if macbook ,let 1 rem = 9px, so font-size= 9/16 = 56.25%
+}
+@include respond(tab-port){ // >900px
+  font-size: 50%;//if ipad ,let 1rem = 8px,so font-size= 8/16 =50%;
+}
+
+// @include respond(phone){ // >600px
+//   font-size: 30%;//if ipad ,let 1rem = 4px,so font-size=4/16 =30%;
+// }
+@include respond(big-desktop){
+  font-size: 75%;//let 1rem=12px,so font-size = 12/16 = 75%
+}
+
+
+
+}
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port){ 
+    padding: 0;
+  }
+}
+
+::selection{
+  background-color: $color-primary;
+  color:$color-white;
+}
